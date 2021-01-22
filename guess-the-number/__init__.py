@@ -3,8 +3,14 @@ def guess(x):
     numero_aleatorio = random.randint(1, x)
     guess = int(input("Chute um número: "))
     while ( guess != numero_aleatorio) :
-        chute = int(input("Tente outro número: "))
-        guess = chute
+        if guess > numero_aleatorio:
+            print("O chute foi muito alto")
+            chute = int(input("Tente outro número: "))
+            guess = chute
+        else:
+            print("O chute foi muito baixo")
+            chute = int(input("Tente outro número: "))
+            guess = chute
     print("Parabéns acertou! O número selecionado era: {}".format(numero_aleatorio))
 
 
